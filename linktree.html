@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Link BEM STDIIS</title>
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Konfigurasi custom font & warna agar pas dengan setup Tailwind
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            // SILAHKAN GANTI WARNA DI SINI JIKA SUDAH ADA PALET BIRU LO, BRO
+            brandBg: '#0B0F19',       // Background utama (Super dark blue, solid)
+            brandCard: '#111827',     // Background card & callout
+            brandBorder: '#1E293B',   // Border solid tegas
+            brandPrimary: '#2563EB',  // Biru utama untuk tombol / aksen penting (Bukan warna pucat)
+            brandHover: '#1D4ED8',    // Biru saat di-hover
+            brandAccent: '#38BDF8',   // Biru muda solid cerah untuk teks indikator/callout
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brandBg text-slate-100 font-sans antialiased min-h-screen flex flex-col items-center justify-between p-4 sm:p-6">
+
+  <!-- Main Wrapper -->
+  <div class="w-full max-w-xl mx-auto pt-8 pb-16">
+    
+    <!-- Header Section -->
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-serif font-bold text-white tracking-wide">Feedback 360</h1>
+      <p class="text-sm font-sans text-slate-400 mt-1 tracking-wide">BEM STDI Imam Syafii Jember</p>
+    </header>
+
+    <!-- Callout Box (Panduan) -->
+    <div id="callout-container" class="mb-8 p-4 bg-brandCard border-l-4 border-brandPrimary rounded-r-lg shadow-sm">
+      <!-- Di-render via JS -->
+    </div>
+
+    <!-- Grouped Links Container -->
+    <main id="sections-container" class="space-y-8">
+      <!-- Kategori dan Link bakal muncul di sini -->
+    </main>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-slate-600 pb-4 font-sans">
+    &copy; 2026 BEM STDIIS Jember. All Rights Reserved.
+  </footer>
+
+  <!-- Core JavaScript Architecture -->
+  <script>
+    // Data Source dari JSON struktural
+    const portalData = {
+    "callouts": [
+        {
+          "title": "Apa itu Feedback 360? 🔄",
+          "message": "Metode penilaian menyeluruh dari segala arah (rekan, atasan, & diri sendiri). Tujuannya agar hasilnya dapat lebih adil, objektif, dan ga subjektif (ngindarin unsur suka/ga suka dari satu pihak doang). Selain itu, supaya kita bisa tahu gap antara gimana kita melihat diri sendiri vs gimana orang lain melihat kita, so bisa jadi bahan evaluasi biar bisa sama-sama terus berkembang ke depannya."
+        },
+        {
+          "title": "📋 Mohon Isi Form Penilaian:",
+          "message": "Tolong isi Form Horizontal (Rekan), Form Vertikal (Atasan), dan Form Refleksi Pribadi secara jujur, gausah ditutup-tutupin sama sekali. Identitas bakal tetap aman kok."
+        },
+        {
+          "title": "⚠️ Penting",
+          "message": "Wajib diisi sebagai syarat klaim sertifikat & rapor. Pengisiannya santai aja, bisa dicicil kok, ga harus sekaligus!"
+        }
+      ],
+      "sections": [
+        {
+          "category": "Form Penilaian Horizontal",
+          "links": [
+            { "label": "Badan Pengurus Harian", "url": "https://forms.gle/isWyDCTdtmUcfLvQA" },
+            { "label": "Biro Pengembangan & Penjaminan Mutu", "url": "https://forms.gle/UfteLpwtKuAb1gLq8" },
+            { "label": "Biro Administrasi", "url": "https://forms.gle/xvM1o8Kvg6hwAW3p9" },
+            { "label": "Biro Pengelolaan Keuangan", "url": "https://forms.gle/eJ7U8fFQcX9ToUoZ8" },
+            { "label": "Biro Inovasi Keuangan", "url": "https://forms.gle/cHSej2aAKwPKVVsY6" },
+            { "label": "Kementerian Akademik & Pengembangan Karier", "url": "https://forms.gle/a1nDGNn6vXXBCwn46" },
+            { "label": "Kementerian Kaderisasi & PSDM", "url": "https://forms.gle/ojVEjY2KRH2zuGve8" },
+            { "label": "Kementerian Pemuda & Olahraga", "url": "https://forms.gle/uRXqXJBXEKdMLNQU9" },
+            { "label": "Kementerian Pengembangan Bahasa", "url": "https://forms.gle/ocmP3MSLjiCs6RkH6" },
+            { "label": "Kementerian Hubungan Eksternal", "url": "https://forms.gle/LPUpfMrTHSUMwetW8" },
+            { "label": "Kementerian Advokasi & Kesejahteraan Mahasiswa", "url": "https://forms.gle/dRLyJYQnUqc8Lzhj6" },
+            { "label": "Kementerian Harmonisasi Kampus", "url": "https://forms.gle/T1bheCjW3QsVvndb9" },
+            { "label": "Biro Desain Komunikasi Visual", "url": "https://forms.gle/kYeNFbBwTnGeACXK7" }
+          ]
+        },
+        {
+          "category": "Form Penilaian Vertikal",
+          "links": [
+            { "label": "Anggota untuk Menteri & BPH", "url": "https://forms.gle/MYt7zLTkwfcFi9DLA" },
+            { "label": "Menteri untuk BPH", "url": "https://forms.gle/u6ZxwMATfj31h4zS7" },
+          ]
+        },
+        {
+          "category": "Form Refleksi Pribadi",
+          "links": [
+            { "label": "Link", "url": "https://forms.gle/XLZMAdPFZZFQfW659" },
+          ]
+        },
+      ]
+    };
+
+    // 1. Render Callout
+    const calloutBox = document.getElementById('callout-container');
+
+    calloutBox.innerHTML = portalData.callouts.map(item => `
+      <div class="mb-4 last:mb-0">
+        <h3 class="text-sm font-semibold text-brandAccent uppercase tracking-wider mb-1">${item.title}</h3>
+        <p class="text-sm text-slate-300 leading-relaxed font-sans">${item.message}</p>
+      </div>
+    `).join('');
+
+    // 2. Render Sections & Links
+    const sectionsContainer = document.getElementById('sections-container');
+
+    portalData.sections.forEach(section => {
+      // Wrapper per kategori
+      const sectionWrapper = document.createElement('section');
+      sectionWrapper.className = "space-y-3";
+
+      // Heading Kategori (Menggunakan Font Serif - Playfair Display)
+      const heading = document.createElement('h2');
+      heading.className = "text-lg font-serif font-bold text-slate-200 border-b border-brandBorder pb-2 tracking-wide";
+      heading.textContent = section.category;
+      sectionWrapper.appendChild(heading);
+
+      // Grid / Stack untuk link di dalam kategori ini
+      const linksGrid = document.createElement('div');
+      linksGrid.className = "grid grid-cols-1 gap-2.5";
+
+      section.links.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        // Desain solid tajam, transisi instan tanpa efek kabur
+        a.className = "block w-full text-left bg-brandCard hover:bg-brandPrimary text-white font-medium py-3.5 px-5 rounded-lg border border-brandBorder hover:border-brandPrimary transition-colors duration-100 font-sans text-sm tracking-wide shadow-sm";
+        a.textContent = link.label;
+        linksGrid.appendChild(a);
+      });
+
+      sectionWrapper.appendChild(linksGrid);
+      sectionsContainer.appendChild(sectionWrapper);
+    });
+  </script>
+</body>
+</html>
